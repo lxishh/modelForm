@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>LISTADO DE PROYECTOS</div>
+    
+    {% if proyectos %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Termino</th>
+                <th>Responsable</th>
+                <th>Prioridad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for proyecto in proyectos %}
+            <tr>
+                <td>{{ proyecto.nombre }}</td>
+                <td>{{ proyecto.fechaInicio }}</td>
+                <td>{{ proyecto.fechaTermino }}</td>
+                <td>{{ proyecto.responsable }}</td>
+                <td>{{ proyecto.prioridad }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% else %}
+    
+    <div>
+        <strong>No se encuentran proyectos en el sistema</strong>
+    </div>
+
+    {% endif %}
+
+    <a href="../">VOLVER</a>
+    <a href="../agregarProyecto">AGREGAR PROYECTOS</a>
+</body>
+</html>
