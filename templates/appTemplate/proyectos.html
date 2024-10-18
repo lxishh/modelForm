@@ -28,6 +28,8 @@
                 <td>{{ proyecto.fechaTermino }}</td>
                 <td>{{ proyecto.responsable }}</td>
                 <td>{{ proyecto.prioridad }}</td>
+                <td><a href="/actualizarProyecto/{{proyecto.id}}">Actualizar</a></td>
+                <td><a href="/eliminarProyecto/{{proyecto.id}}">Eliminar</a></td>
             </tr>
             {% endfor %}
         </tbody>
